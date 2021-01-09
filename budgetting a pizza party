@@ -1,0 +1,36 @@
+budget = float(input("Please enter your total budget: "))
+cost_slice = float(input("Enter cost per slice: "))
+cost_pizza = float(input("Enter cost of a whole pizza: "))
+people_attending = int(input("Enter the number of people attending the party: "))
+
+counter = 1
+total_slices = 0
+
+while counter <= people_attending:
+    slices = int(input("Enter the slices for person number "+str(counter)+":"))
+    if slices < 0:
+        print("Enter a valid input")
+        continue
+    if slices > 0:
+        counter += 1
+        total_slices += slices
+
+whole_pizza = total_slices//8
+slices_left = total_slices%8
+
+total_cost_whole_pizza = whole_pizza*cost_pizza
+total_cost_slices = slices_left*cost_slice
+
+total_cost = total_cost_whole_pizza + total_cost_slices
+
+print("You should purchase "+str(whole_pizza)+" whole pizzas and "+str(slices_left)+" slices.")
+print("Your total cost will be:", total_cost)
+
+if (budget > total_cost):
+    remaining = budget - total_cost
+    print("You still have "+str(remaining)+" left over.")
+elif (budget == total_cost):
+    print("You have no money left.")
+else:
+    no_remaining = total_cost - budget
+    print("You are over budget by "+str(no_remaining))
