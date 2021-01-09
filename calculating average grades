@@ -1,0 +1,26 @@
+assign1 = float(input("Enter assignment #1 grade: "))
+assign2 = float(input("Enter assignment #2 grade: "))
+assign3 = float(input("Enter assignment #3 grade: "))
+weekly_quiz = float(input("Enter weekly quizzes grade: "))
+midterm = float(input("Enter midterm grade: "))
+final_exam = float(input("Enter final grade: "))
+
+
+avg_assign = float((assign1 + assign2 + assign3)/3)
+
+
+final = float((0.25 * avg_assign) + (0.05 * weekly_quiz) + (0.25 * midterm) + (0.45 * final_exam))
+
+
+gradeA = 95
+
+if final >= gradeA:
+    students_grade = True
+else:
+    students_grade = False
+
+print("\n Average Assignment Grade: %.1f" % avg_assign)
+print("Final Grade: %.1f" % final)
+print("Is an A?", students_grade)
+
+
