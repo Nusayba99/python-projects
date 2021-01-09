@@ -1,0 +1,31 @@
+print("Valid Triangle Tester")
+print("\n")
+
+x1_coor = float(input("Enter Point #1 - x position: "))
+y1_coor = float(input("Enter Point #1 - y position: "))
+x2_coor = float(input("Enter Point #2 - x position: "))
+y2_coor = float(input("Enter Point #2 - y position: "))
+x3_coor = float(input("Enter Point #3 - x position: "))
+y3_coor = float(input("Enter Point #3 - x position: "))
+
+side_1 = ((x1_coor - x2_coor)**2 + (y1_coor - y2_coor)**2) * 0.5
+side_2 = ((x1_coor - x3_coor)**2 + (y1_coor - y3_coor)**2) * 0.5
+side_3 = ((x2_coor - x3_coor)**2 + (y2_coor - y3_coor)**2) * 0.5
+
+print("\nThe length of each side of your test shape is: ")
+print("\n")
+print("Side 1: ", side_1)
+print("Side 2: ", side_2)
+print("Side 3: ", side_3)
+
+if (side_1 + side_2 > 3) or (side_2 + side_3 > side_2) or (side_3 + side_1 > side_2):
+    print("This is a valid triangle!")
+else:
+    print("Not a valid triangle")
+
+if side_1 == side_2 == side_3:
+    print("This is an equilateral triangle!")
+elif (side_1 == side_2) or (side_2 == side_3) or (side_3 == side_1):
+    print("It is an isosceles triangle!")
+else:
+    print("It is a scalene triangle!")
