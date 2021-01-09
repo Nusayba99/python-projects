@@ -1,0 +1,89 @@
+def listlen(mylist):
+    counter = 0 
+    for index in mylist:
+        counter += 1
+    return counter 
+
+
+mylist = [10, 20, 30]
+x = listlen(mylist)
+print (x)
+print()
+
+def listmax(mylist):
+    max_num = mylist[0]
+    for index in mylist:
+        if max_num < index:
+            max_num = index
+
+    return max_num
+
+mylist = [10,20,30,5,3]
+x = listmax(mylist)
+print(x)
+print(mylist)
+print()
+
+def listcopy(mylist):
+    new_list=[]
+    for i in mylist:
+        new_list=new_list+[i]
+    return new_list
+
+mylist=[10,20,30]
+x=listcopy(mylist)
+print (x)
+
+def listappend(mylist,int):
+    app_list=mylist+[int]
+    return app_list
+
+mylist=[10,20,30]
+x=listappend(mylist,999)
+print (x)
+print() 
+
+def listinsert(mylist,loc,element):
+    mylist=mylist+[0]
+    for i in range(len(mylist)-1,loc,-1):
+        mylist[i]=mylist[i-1]
+    mylist[loc]=element
+    return mylist
+
+mylist=[10,20,30]
+x=listinsert(mylist,1,999)
+print (x)
+print(mylist)
+print()
+
+def listremove(mylist, value):
+    if mylist:
+        result = listremove(mylist[1:], value )
+        if mylist[0] != value:
+            result = [mylist[0]] + result
+        return result
+    return []
+
+mylist = [10,20,30]
+x = listremove(mylist,20)
+print(x)
+print(mylist)
+print()
+
+def listreverse(mylist):
+
+    length = len(mylist)
+    counter = length 
+
+    reverse_list = [0] * length
+    for x in mylist:
+        counter -= 1
+        reverse_list[counter] = x
+
+        return reverse_list
+
+
+mylist=[10,20,30]
+x=listreverse(mylist)
+print (x)
+print(mylist)
