@@ -1,0 +1,46 @@
+import random
+
+dice_side = 0
+
+while True:
+        dice_side = int(input("How many sides do you want your dice to have? (4,6,8,10, 12, 20) "))
+        if (dice_side == 4) or (dice_side == 6) or (dice_side == 8) or (dice_side == 10) or (dice_side == 12) or (dice_side == 20):
+            print("Thanks! Here we go:")
+            print()
+            break
+        else: 
+            print("Sorry this an invalid input. Please enter again ")
+    
+
+counter = 0
+dice1 = 0
+dice2 = 0
+doubles_counter = 0
+sum_dice1 = 0
+sum_dice2 = 0
+
+while True:
+    counter += 1
+    dice1 = random.randint(1, dice_side)
+    dice2 = random.randint(1, dice_side)
+    print(str(counter)+" Dice 1 is ", dice1, " and Dice 2 is ", dice2)
+
+    if (dice1 == dice2):
+        #print doubles
+        doubles_counter += 1
+
+    sum_dice1 += dice1
+    sum_dice2 += dice2
+    
+    if (dice1 == 1) and (dice2 == 1):
+        print("Snake eyes! This took you "+str(counter)+" tries!")
+        break
+
+average_dice1 = sum_dice1/ counter
+average_dice2 = sum_dice2/ counter
+
+percent_double = (doubles_counter/counter) * 100
+
+print("Along the way, you rolled "+str(doubles_counter)+" doubles. Doubles accounted for "+str(round(percent_double,2))+" percent of the total rolls")
+print("The average roll for dice 1 was: ", round(average_dice1,2))
+print("The average roll for dice 2 was: ", round(average_dice2,2))
