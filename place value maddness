@@ -1,0 +1,137 @@
+num1 = int(input("Enter value 1: "))
+num2 = int(input("Enter value 2: "))
+
+print("\nPlace Value Totals:")
+
+num1_ones_p = num1%10 
+num2_ones_p = num2%10
+
+total_onespl = num1_ones_p + num2_ones_p
+
+num1_tens_p = (num1%100)//10
+num2_tens_p = (num2%100)//10
+
+total_tenspl = num1_tens_p + num2_tens_p
+
+
+num1_hund_p = (num1//100)
+num2_hund_p = (num2//100)
+
+total_hundpl = num1_hund_p + num2_hund_p
+
+
+num1_thou_p = (num1//1000)
+num2_thou_p = (num1//1000)
+
+total_thoupl = num1_thou_p + num2_thou_p
+
+print(num1_ones_p, "+", num2_ones_p, "=", total_onespl, "one(s)")
+print(num1_tens_p, "+", num2_tens_p, "=", total_tenspl, 'ten(s)')
+print(num1_hund_p, "+", num2_hund_p, "=", total_hundpl, 'hundred(s)')
+print(num1_thou_p, "+", num2_thou_p, "=", total_thoupl, 'thousand(s)')
+
+
+print(">>>")
+
+
+
+num1 = int(input("Enter value 1: "))
+num2 = int(input("Enter value 2: "))
+
+print("\nPlace Value Totals:")
+
+num1_ones_p = num1%10
+num2_ones_p = num2%10
+
+total_onespl = num1_ones_p + num2_ones_p
+
+num1_tens_p = (num1%100)//10
+num2_tens_p = (num2//10)
+
+total_tenspl = num1_tens_p + num2_tens_p
+
+
+num1_hund_p = (num1%1000)//100
+num2_hund_p = (num2//100)
+
+total_hundpl = num1_hund_p + num2_hund_p
+
+
+num1_thou_p = (num1//1000)
+num2_thou_p = (num2//100)
+
+total_thoupl = num1_thou_p + num2_thou_p
+
+print(num1_ones_p, '+', num2_ones_p, '=', total_onespl,'one(s)')
+print(num1_tens_p, '+', num2_tens_p, '=', total_tenspl, 'ten(s)')
+print(num1_hund_p, '+', num2_hund_p, '=', total_hundpl, 'hundred(s)')
+print(num1_thou_p, '+', num2_thou_p, '=', total_thoupl, 'thousand(s)')
+
+
+num1 = int(input("Enter value 1: "))
+num2 = int(input("Enter value 2: "))
+
+print("\nPlace Value Totals:")
+
+num1_ones_p = num1%10 
+num2_ones_p = num2%10
+
+total_onespl = num1_ones_p + num2_ones_p
+
+num1_tens_p = (num1%100)//10
+num2_tens_p = (num2%100)//10
+
+total_tenspl = num1_tens_p + num2_tens_p
+
+
+num1_hund_p = (num1//1000)
+num2_hund_p = (num2//1000)
+
+total_hundpl = num1_hund_p + num2_hund_p
+
+
+num1_thou_p = (num1//1000)
+num2_thou_p = (num2//1000)
+
+total_thoupl = num1_thou_p + num2_thou_p
+
+print(num1_ones_p, "+", num2_ones_p, "=", total_onespl, "one(s)")
+print(num1_tens_p, "+", num2_tens_p, "=", total_tenspl, 'ten(s)')
+print(num1_hund_p, "+", num2_hund_p, "=", total_hundpl, 'hundred(s)')
+print(num1_thou_p, "+", num2_thou_p, "=", total_thoupl, 'thousand(s)')
+
+
+
+
+num1 = int(input("Enter value 1: "))
+num2 = int(input("Enter value 2: "))
+
+print("\nPlace Value Totals:")
+
+num1_ones_p = num1%10 
+num2_ones_p = num2%10
+
+total_onespl = num1_ones_p + num2_ones_p
+
+num1_tens_p = (num1%100)//10
+num2_tens_p = (num2%100)//10
+
+total_tenspl = num1_tens_p + num2_tens_p
+
+
+num1_hund_p = (num1//100)
+num2_hund_p = (num2//100)
+
+total_hundpl = num1_hund_p + num2_hund_p
+
+
+num1_thou_p = (num1//1000)
+num2_thou_p = (num2//1000)
+
+total_thoupl = num1_thou_p + num2_thou_p
+
+print(num1_ones_p, "+", num2_ones_p, "=", total_onespl, "one(s)")
+print(num1_tens_p, "+", num2_tens_p, "=", total_tenspl, 'ten(s)')
+print(num1_hund_p, "+", num2_hund_p, "=", total_hundpl, 'hundred(s)')
+print(num1_thou_p, "+", num2_thou_p, "=", total_thoupl, 'thousand(s)')
+
