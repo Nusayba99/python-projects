@@ -1,0 +1,41 @@
+print("Instructions: Please enter three strings: ")
+print("\n")
+
+x1 = input("Enter first string: ")
+x2 = input("Enter second string: ")
+x3 = input("Enter third string: ")
+
+x1_lower = str(x1).lower()
+x2_lower = str(x2).lower()
+x3_lower = str(x3).lower()
+
+print("Here are the strings in ascending alphabetical order: ")
+
+if x1_lower < x2_lower and x2_lower < x3_lower:
+    print(x1)
+    print(x2)
+    print(x3)
+elif x1_lower < x3_lower and x3_lower < x2_lower:
+    print(x1)
+    print(x3)
+    print(x2)
+elif x2_lower < x1_lower and x1_lower < x3_lower:
+    print(x2)
+    print(x1)
+    print(x3)
+elif x2_lower < x3_lower and x3_lower < x1_lower:
+    print(x2)
+    print(x3)
+    print(x1)
+elif x3_lower < x2_lower and x2_lower < x1_lower:
+    print(x3)
+    print(x2)
+    print(x1)
+elif x3_lower < x1_lower and x1_lower < x2_lower:
+    print(x3)
+    print(x1)
+    print(x2)
+else: 
+    print(x1)
+    print(x3)
+    print(x2)
