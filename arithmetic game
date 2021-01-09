@@ -1,0 +1,229 @@
+import random
+from my_functions import *
+
+while True:
+    user_attempts = int(input("How many problems would you to like to attempt? "))
+
+    if user_attempts >= 0:
+        break
+    elif user_attempts < 0:
+        print("Invalid number, try again")
+        continue
+
+
+while True:
+    width = int(input("How wide do you want your digits to be?: "))
+
+    if width > 10:
+        print("Invalid width, try again")
+        continue
+    elif width < 5:
+        print("Invalid width, try again")
+        continue
+    else:
+        break
+
+while True:
+    ch = input("What character would you like to use? ")
+
+    if len(ch) > 1:
+        print("String too long, try again")
+        continue
+    else: 
+        break
+
+#--------------------drill-----------------------
+drill = input("Would you like to activate 'drill' mode? yes or no: ")
+
+print("Here we go...")
+
+count = user_attempts
+correct_ans = 0
+wrong_ans = 0
+
+while count > 0 and drill == "no":
+
+    first_num = random.randint(0,9)
+    second_num = random.randint(0,9)
+    random_num_opp = random.randint(1,4)
+
+    if random_num_opp == 1:
+        op = "+"
+    elif random_num_opp == 2:
+        op = "-"
+    elif random_num_opp == 3:
+        op = "*"
+    elif random_num_opp == 4:
+        op = "/"
+        if second_num == 0:
+            second_num = random.randint(1,9)
+        if first_num%second_num != 0 and second_num != 0:
+            while True:
+                first_num = random.randint(0,9)
+                second_num = random.randint(1,9)
+                if first_num%second_num == 0:
+                    break
+                else:
+                    continue
+        
+    print("What is.....")
+    print()
+
+    print(print_number(first_num,width,ch))
+    print()
+    
+    if op == "+":
+        print(plus(width,ch))
+    elif op == "-":
+        print(minus(width,ch))
+    elif op == "*":
+        print(mult(width,ch))
+    elif op == "/":
+        print(div(width,ch))
+
+    print()
+  
+    print(print_number(second_num,width,ch))
+    print()
+
+    user_ans = int(input("Answer: "))
+    if check_answer(first_num,second_num,user_ans,op) == True:
+        print("Correct!")
+        correct_ans += 1
+    else:
+        print("Wrong!")
+        wrong_ans += 1 
+
+    count -= 1
+
+print("You got ", correct_ans,"out of ",user_attempts,"correct!")
+
+attempts = 1
+correct_ans = 0
+
+total_addproblems = 0
+total_subproblems = 0
+total_multproblems = 0
+total_divproblems = 0
+
+add_counter = 0
+sub_counter = 0
+mult_counter = 0
+div_counter = 0
+
+add_wrong = 0
+sub_wrong = 0
+mult_wrong = 0
+div_wrong = 0
+
+while count > 0 and drill == "yes":
+    first_num = random.randint(0,9)
+    second_num = random.randint(0,9)
+    random_num_opp = random.randint(1,4)
+    
+    if random_num_opp == 1:
+        op = "+"
+    elif random_num_opp == 2:
+        op = "-"
+    elif random_num_opp == 3:
+        op = "*"
+    elif random_num_opp == 4:
+        op = "/"
+        if second_num == 0:
+            second_num = random.randint(1,9)
+        if first_num%second_num != 0 and second_num != 0:
+            while True:
+                first_num = random.randint(0,9)
+                second_num = random.randint(1,9)
+                if first_num%second_num == 0:
+                    break
+                else:
+                    continue
+
+    print("What is.....")
+    print()
+
+    print(print_number(first_num,width,ch))
+    print()
+    
+    if op == "+":
+        print(plus(width,ch))
+    elif op == "-":
+        print(minus(width,ch))
+    elif op == "*":
+        print(mult(width,ch))
+    elif op == "/":
+        print(div(width,ch))
+
+    print()
+  
+    print(print_number(second_num,width,ch))
+    print()
+
+    while True:
+        user_ans = int(input("Answer: "))
+        if check_answer(first_num,second_num,user_ans,op) == True:
+            print("Correct!")
+            correct_ans += 1
+            if op == "+":
+                add_counter += 1
+                total_addproblems += 1
+            elif op== "-":
+                sub_counter += 1
+                total_subproblems += 1
+            elif op == "*":
+                mult_counter += 1
+                total_multproblems += 1
+            elif op == "/":
+                div_counter += 1
+                total_divproblems += 1
+            break
+
+        else:
+            print("Incorrect!")
+            attempts += 1
+            if op == "+":
+                add_wrong += 1
+                total_addproblems += 1
+            elif op == "-":
+                sub_wrong += 1
+                total_subproblems += 1
+            elif op == "*":
+                mult_wrong += 1
+                total_multproblems += 1
+            elif op == "/":
+                div_wrong += 1
+                total_divproblems += 1
+            continue
+
+
+    count -= 1
+
+print("You got ", correct_ans,"out of ",user_attempts,"correct!")
+
+print()
+
+print("Total additon problems presented ", total_addproblems)
+add_adjustments = add_counter/total_addproblems*100
+print("Correct addition problems: ", add_adjustments, "%")
+
+print()
+
+print("Total subtraction problems presented ", total_subproblems)
+sub_adjustmnets = sub_counter/total_subproblems*100
+print("Correct subtraction problems: ", sub_adjustmnets, "%")
+
+print()
+
+print("Total multiplication problems presented ", total_multproblems)
+mult_adjustments = mult_counter/total_multproblems*100
+print("Correct multiplication problems: ", mult_adjustments , "%")
+
+print()
+
+print("Total division problems presented ", total_divproblems)
+div_adjustments = div_counter/total_divproblems*100
+print("Correct division problems: ", div_adjustments , "%")
+
+
+
