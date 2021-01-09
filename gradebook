@@ -1,0 +1,43 @@
+while True:
+    num_students = int(input("How many students in your class? : "))
+    if num_students <= 0:
+        print("Invalid number of students, try again")
+        continue
+    else:
+        break
+
+while True:
+    num_tests = int(input("How many tests in your class? : "))
+    if num_tests <= 0:
+        print("Invalid number of tests, try again")
+        continue
+    else:
+        print("Here we go!")
+        break
+
+student_counter = 1
+total_average_score = 0
+
+for z in range(num_students):
+    print("*****student "+str(student_counter)+"*****")
+    student_counter +=1
+    
+    test_counter = 1
+    total_test_score = 0
+    for i in range(num_tests):
+        while True:
+            test_score = float(input("Enter score for test number "+str(test_counter)+": "))
+            if test_score < 0:
+                print("Invalid test score, try again")
+                continue
+            else:
+                total_test_score += test_score
+                test_counter +=1
+                break 
+
+avg = (total_test_score/num_tests)
+total_average_score += avg
+print("Average for student no. "+str(student_counter)+" is", avg)
+
+total_average_for_all_students = (total_average_score/num_students)
+print("The total average for all students is: ", round(total_average_for_all_st
