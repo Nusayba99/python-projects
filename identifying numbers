@@ -1,0 +1,200 @@
+def is_prime(num):
+    num_factors = 0
+    for n in range(1,num+1):
+        if num%n == 0:
+            num_factors +=1
+        if num_factors ==2:
+            result = True
+        else:
+            result = False 
+
+    return result
+
+def is_prime_boundary(lower, upper):
+    p_num = ""
+    counter = 0
+
+    for n in range(lower, upper+1):
+        num_factors = 0
+        for factor in range(1, n+1):
+            if n % factor == 0:
+                num_factors += 1
+
+        if (num_factors == 2):
+            counter +=1
+            p_num += str(n) + '\n'
+
+    return p_num
+
+def is_perfect(num):
+    acc = 0
+    for n in range(1,num+1):
+        if num%n == 0:
+            acc +=n
+
+    acc = acc - num
+    if acc == num:
+        result = True
+    else:
+        result = False
+
+    return result
+
+def is_abundant(num):
+    acc = 0
+    for n in range(1, num+1):
+        if num%n == 0:
+            acc +=n
+
+    acc = acc - num
+    if acc > num:
+        result = True
+    else:
+        result = False
+    return result
+
+def is_odd(num):
+    if num%2 == 1:
+        result = True
+    else:
+        result = False
+    return result
+
+def is_even(num):
+    if num%2 == 0:
+        result = True
+    else:
+        result = False
+    return result
+
+
+while True: 
+    print("Main Menu")
+    print("\n")
+    print("1- Find all prime numbers within a given range: ") 
+    print("2 - Find all perfect numbers within a given range: ")
+    print("3 - Find all abundant numbers within a given range: ")
+    print("4 - Chart all even, odd, prime, perfect and abundant numbers within a given range: ")
+    print("5 - Quit:")
+
+    user_choice = int(input("Your choice: "))
+
+    if user_choice ==1:
+        while True:
+            lower = int(input("Enter a lower value: "))
+
+            if lower <= 0:
+                print("Enter a valid number: ")
+                continue
+            else:
+                break
+
+        while True:
+            upper = int(input("Enter an upper value: "))
+
+            if upper <= 0:
+                print("Enter valid number: ")
+                continue
+            else:
+                break
+    
+        print("All prime numbers between", lower, "and", upper, "are: ")
+        print(is_prime_boundary(lower, upper+1))
+
+    if user_choice ==2:
+        while True:
+            lower = int(input("Enter a lower value: "))
+
+            if lower <= 0:
+                print("Enter a valid number: ")
+                continue
+            else:
+                break
+
+        while True:
+            upper = int(input("Enter an upper value: "))
+        
+            if upper <= 0:
+                print("Enter valid number: ")
+                continue
+            else:
+                break
+
+        for i in range(lower, upper+1):
+            if is_perfect(i):
+                print(i)
+
+    if user_choice ==3:
+        while True:
+            lower = int(input("Enter a lower value: "))
+
+            if lower <= 0:
+                print("Enter a valid number: ")
+                continue
+            else:
+                break
+
+        while True:
+            upper = int(input("Enter an upper value: "))
+        
+            if upper <= 0:
+                print("Enter valid number: ")
+                continue
+            else:
+                break
+
+        for i in range(lower, upper+1):
+            if is_abundant(i):
+                print(i)   
+
+    if user_choice ==4:
+        while True:
+            lower = int(input("Enter a lower value: "))
+
+            if lower <= 0:
+                print("Enter a valid number: ")
+                continue
+            else:
+                break
+
+        while True:
+            upper = int(input("Enter an upper value: "))
+        
+            if upper <= 0:
+                print("Enter valid number: ")
+                continue
+            else:
+                break
+
+        for x in range(lower, upper+1):
+
+            numbers = str(x)
+            even_sign = str()
+            odd_sign = str()
+            prime_sign = str()
+            perfect_sign = str()
+            abundant_sign = str()
+
+            if is_even(x):
+                even_sign +="X"
+
+            if is_odd(x):
+                odd_sign += "X"
+
+            if is_prime(x):
+                prime_sign += "X"
+
+            if is_perfect(x):
+                perfect_sign += "X"
+                
+            if is_abundant(x):
+                abundant_sign += "X"
+
+
+            print ('%-13s %-10s %-13s %-13s %-13s %-12s' % (numbers, even_sign,odd_sign,prime_sign,perfect_sign,abundant_sign))
+
+
+
+    if user_choice ==5:
+        print("Quit")
+        break
