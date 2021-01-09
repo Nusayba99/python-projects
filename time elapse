@@ -1,0 +1,19 @@
+
+hours = 0
+mins = 0
+
+while True:
+    sec = int(input("Please enter the elapsed seconds: "))
+    if sec < 0:
+        print("Invalid input, stopping program.")
+        break
+
+    sec = sec % (24 * 3600)
+    hours = sec // 3600
+    sec %= 3600
+    mins = sec // 60
+    sec %= 60
+
+
+    print("Hours:"+ str(hours)+" Minutes:"+str(mins)+" Seconds:"+str(sec))
+
