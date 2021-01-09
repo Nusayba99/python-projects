@@ -1,0 +1,24 @@
+sentinel = -1
+counter = 0
+weight = 0
+last_w = 0
+sum_weights = 0
+avg_weight = 0
+
+while True:
+    if weight == sentinel:
+        break
+    else:
+        counter += 1
+        last_w = weight
+        sum_weights += weight
+        weight = float(input("Please enter your weight on day "+ str(counter)+ " ( or enter -1 to stop): "))
+        if counter == 1:
+            first_weight = weight
+
+average_weight = sum_weights / (counter -1)
+total_weight_loss = first_weight - last_w
+
+print("The average weight during "+str(counter -1)+" days is "+str(round(avg_weight,2))+" lbs")
+print("Total weight loss during "+ str(counter-1)+" days is "+str(round(total_weight_loss,2))+" lbs")
+
