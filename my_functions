@@ -1,0 +1,502 @@
+#--------------------a-----------------------
+def horiz_line(width,ch):
+    acc = ""
+    for i in range(width):
+        acc +=ch
+    return acc
+
+
+print("Horizontal line, width = 5:")
+temp = horiz_line(5, "*")
+print(temp)
+print()
+
+print("Horizontal line, width = 10:")
+temp = horiz_line(10, "+")
+print(temp)
+print()
+
+print("Horizontal line, width = 15:")
+temp = horiz_line(15, "z")
+print(temp)
+print()
+
+# (vertical line, shift, height)
+def ver_line(shift,height,ch):
+    acc = ""
+    a = ""
+    for i in range(shift):
+        a += ' '
+    for i in range (height):
+        acc+=a+ch+"\n"
+    return acc
+
+print("Vertical line, shift= 0, height=3: ")
+temp = ver_line(0, 3, "!")
+print(temp)
+print()
+
+print("Vertical line, shift= 3, height=3: ")
+temp = ver_line(3, 3, "&")
+print(temp)
+print()
+
+print("Vertical line, shift= 6, height=5: ")
+temp = ver_line(6, 5, "$")
+print(temp)
+print()
+
+def two_ver_lines(width,height,ch):
+    acc= ""
+    a = ""
+    for i in range (width):
+        a+= ' '
+    for i in range (height):
+        acc+=ch+a+ch+"\n"
+    return acc
+
+print("Two vertical lines, width= 3, height=3: ")
+temp = two_ver_lines(3, 3, "^")
+print(temp)
+print()
+
+print("Two vertical lines, width= 4, height=5: ")
+temp = two_ver_lines(4, 5, "&")
+print(temp)
+print()
+
+print("Two vertical lines, width= 5, height=2: ")
+temp = two_ver_lines(5, 2, "#")
+print(temp)
+print()
+#---------part b-----------------
+
+def number_1(width, height, ch):
+    acc = ""
+    a= ""
+    for i in range(width):
+        a += ' '
+    for i in range (height):
+        acc+=a+ch+"\n"
+    return acc
+
+print("Number 1, width=5: ")
+temp = number_1(5,5, "*")
+print(temp)
+print()
+
+print("Number 1, width=10: ")
+temp = number_1(10,5, "*")
+print(temp)
+print()
+
+print("Number 1, width=2: ")
+temp = number_1(2,5, "*")
+print(temp)
+print()
+
+def number_0(width,ch):
+    acc = ""
+    for i in range(width):
+        acc+=ch
+    acc+="\n"
+
+    for j in range(3): #why 3
+        acc+=ch
+        for i in range(width-2):
+            acc+=" "
+        acc+=ch+"\n"
+
+    for i in range(width):
+        acc+=ch
+    acc+="\n"
+    return acc
+
+print(number_0(5,'*'))
+
+def ver_line(shift,height,ch):
+    acc = ""
+    a = ""
+    for i in range(shift):
+        a += ' '
+    for i in range (height):
+        acc+=a+ch+"\n"
+    return acc
+
+
+temp = ver_line(0, 5, "*")
+print(temp)
+print()
+
+def number_2(width,ch):
+    acc =""
+    for i in range(width):
+        acc+=ch
+    acc+="\n"
+
+    for i in range(width-1):
+        acc+=" "
+    acc+=(ch+"\n")
+
+    for i in range(width):
+        acc+=ch
+    acc+="\n"
+    acc+=ch
+
+    for i in range(width-1):
+        acc+=" "
+    acc+=("\n")
+
+    for i in range(width):
+        acc+=ch
+    acc+="\n"
+    return acc
+
+print(number_2(5,'*'))
+
+def number_3(width,ch):
+    acc = ""
+    for i in range(width):
+        acc+=ch
+    acc+="\n"
+
+    for i in range(width-1):
+      acc+=" "
+    acc+=(ch+"\n")
+
+    for i in range(width):
+        acc+=ch
+    acc+="\n"
+
+    for i in range(width-1):
+      acc+=" "
+    acc+=ch+"\n"
+
+    for i in range(width):
+        acc+=ch
+    acc+="\n"
+
+    return acc
+
+print(number_3(5,'*'))
+
+def number_4(width,ch):
+   acc=""
+   for i in range(2):
+       acc+=ch
+       for j in range(width-2):
+           acc+=" "
+       acc+=(ch+"\n")
+   for i in range(width):
+       acc+=ch
+   acc+="\n"  
+   for i in range(2):
+       for j in range(width-1):
+           acc+=" "
+       acc+=(ch+"\n")
+       return acc
+
+print(number_4(5,'*'))
+
+def number_5(width,ch):
+   acc=""
+   for i in range(width):
+       acc+=ch
+   acc+="\n"
+   acc+=ch
+   for i in range(width-1):
+       acc+=" "
+   acc+=("\n")
+   for i in range(width):
+       acc+=ch
+   acc+="\n"
+   for i in range(width-1):
+       acc+=" "
+   acc+=(ch+"\n")
+   for i in range(width):
+       acc+=ch
+   acc+="\n"
+   
+   return acc        
+
+print(number_5(5,'*'))
+
+def number_6(width,ch):
+   acc=""
+   for i in range(width):
+       acc+=ch
+   acc+="\n"
+   acc+=ch
+   for i in range(width-1):
+       acc+=" "
+   acc+=("\n")
+   for i in range(width):
+       acc+=ch
+   acc+="\n"
+   acc+=ch
+   for i in range(width-2):
+       acc+=" "
+   acc+=(ch+"\n")
+   for i in range(width):
+       acc+=ch
+   acc+="\n"
+   return acc  
+
+print(number_6(5,'*'))
+
+def number_7(width,ch):
+   acc=""
+   for i in range(width):
+       acc+=ch
+   acc+="\n"  
+   for j in range(4):
+       for i in range(width-1):
+           acc+=" "
+       acc+=(ch+"\n")
+   return(acc)  
+
+print(number_7(5,'*')) 
+
+def number_8(width,ch):
+   acc=""
+   for i in range(width):
+       acc+=ch
+   acc+="\n"
+   acc+=ch
+   for i in range(width-2):
+       acc+=" "
+   acc+=(ch+"\n")
+   for i in range(width):
+       acc+=ch
+   acc+="\n"
+   acc+=ch
+   for i in range(width-2):
+       acc+=" "
+   acc+=(ch+"\n")
+   for i in range(width):
+       acc+=ch
+   acc+="\n"
+   return acc  
+
+print(number_8(5,'*'))
+
+def number_9(width,ch):
+   acc=""
+   for i in range(width):
+       acc+=ch
+   acc+="\n"
+   acc+=ch
+   for i in range(width-2):
+       acc+=" "
+   acc+=(ch+"\n")
+   for i in range(width):
+       acc+=ch
+   acc+="\n"
+   for i in range(width-1):
+       acc+=" "
+   acc+=(ch+"\n")
+   for i in range(width):
+       acc+=ch
+   acc+="\n"
+   return acc
+
+print(number_9(5,'*'))
+
+#-----------c---------------------------------
+
+def print_number(num,width,ch):
+    if num == 0: 
+        for i in range(5):
+            if i == 0 or i == 4:
+                for j in range(width):
+                    print(ch,end="")
+                print()
+            else:
+                for j in range(width):
+                    if j == 0 or j == width-1:
+                        print(ch,end="")
+                    else:
+                        print(" ",end="")
+                print()
+        
+    if num == 1: 
+        for i in range(5):
+            for j in range(width-1):
+                print(" ",end="")
+            print(ch)
+    if num == 2: 
+        for i in range(5):
+            if i%2 == 0:
+                for j in range(width):
+                    print(ch,end="")
+                print()
+            if i == 1:
+                for j in range(width-1):
+                    print(" ",end="")
+                print(ch)
+            if i == 3:
+                print(ch)
+    if num == 3: 
+        for i in range(5):
+            if i%2 == 0:
+                for j in range(width):
+                    print(ch,end="")
+                print()
+            else:
+                for j in range(width-1):
+                    print(" ",end="")
+                print(ch)
+    if num == 4: 
+        for i in range(5):
+            if i < 2:
+                for j in range(width):
+                    if j == 0:
+                        print(ch,end="")
+                    if j == width-1:
+                        print(ch)
+                    if width-1 > j > 0:
+                        print(" ",end="")
+            if i > 2:
+                for j in range(width-1):
+                    print(" ",end="")
+                print(ch)
+            if i == 2:
+                for j in range(width):
+                    print(ch,end="")
+                print()
+    if num == 5: 
+        for i in range(5):
+            if i%2 == 0:
+                for j in range(width):
+                    print(ch,end="")
+                print()
+            if i == 3:
+                for j in range(width-1):
+                    print(" ",end="")
+                print(ch)
+            if i == 1:
+                print(ch)
+    if num == 6: 
+        for i in range(5):
+            if i%2 == 0:
+                for j in range(width):
+                    print(ch,end="")
+                print()
+            if i == 3:
+                print(ch,end="")
+                for j in range(1,width-1):
+                    print(" ",end="")
+                print(ch)
+            if i == 1:
+                print(ch)
+    if num == 7: 
+        for i in range(5):
+            if i == 0:
+                for j in range(width):
+                    print(ch,end="")
+                print()
+            else:
+                for j in range(width-1):
+                    print(" ",end="")
+                print(ch)
+    if num == 8: 
+        for i in range(5):
+            if i%2 == 0:
+                for j in range(width):
+                    print(ch,end="")
+                print()
+            else:
+                print(ch,end="")
+                for j in range(1,width-1):
+                    print(" ",end="")
+                print(ch)
+    if num == 9: 
+        for i in range(5):
+            if i%2 == 0:
+                for j in range(width):
+                    print(ch,end="")
+                print()
+            if i == 1:
+                print(ch,end="")
+                for j in range(1,width-1):
+                    print(" ",end="")
+                print(ch)
+            if i == 3:
+                for j in range(width-1):
+                    print(" ",end="")
+                print(ch)
+
+
+
+#--------------------d-----------------------
+
+def plus(width,ch):
+    plus_sign = ""
+
+    if width%2 == 1:
+        space = int(width/2)
+        plus_sign += ver_line(space, 2,ch)
+        plus_sign += horiz_line(width, ch)
+        plus_sign += '\n'
+        plus_sign += ver_line(space, 2, ch)
+    else:
+        space = int(width/2)-1
+        plus_sign += " " * space+ two_ver_lines(0,1,ch)
+        plus_sign += " " * space+ two_ver_lines(0,1,ch)
+        plus_sign += horiz_line(width,ch)
+        plus_sign += '\n'
+        plus_sign += " " * space+ two_ver_lines(0,1,ch)
+        plus_sign += " " * space+ two_ver_lines(0,1,ch)
+
+    return plus_sign
+
+print(plus(6,"*"))
+
+def minus(width, ch):
+    minus_sign = horiz_line(width, ch)
+    return minus_sign
+
+print(minus(6,"*"))
+
+def mult(width, ch):
+    pattern = ""
+    for i in range(width):
+        for j in range(width):
+            if (i == j) or ((5 - j -1) == i):
+                print(ch, end = '')
+            else:
+                print(' ', end = '')
+        print('')
+    return pattern
+
+def div(width, ch):
+    pattern = ""
+    for _ in range(width):
+        print(' '* width, ch, '\n')
+        width -= 1
+    return pattern
+
+#--------------------e-----------------------
+
+def check_answer(num1,num2,user_answer,op):
+    if op == "-":
+        correct_answer = num1 - num2
+    elif op == "+":
+        correct_answer = num1 + num2
+    elif op == "*":
+        correct_answer = num1*num2
+    elif op == "/":
+        correct_answer = num1/num2
+    
+    
+    if correct_answer == user_answer:
+        return True
+    else:
+        return False
+
+user_answer = check_answer(1,2,3,"+")
+print(user_answer)
+
+#--------------------f-----------------------
+
+
