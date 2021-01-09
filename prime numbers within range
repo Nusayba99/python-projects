@@ -1,0 +1,35 @@
+n=0
+while True:
+
+    n = int(input("Please enter the value of n that is greater than or equal to 10: "))
+
+    if (n >= 0) :
+        break 
+    elif n <= 0:
+        print("Invalid number. Please enter positive value greater than or equal to 10")
+        continue
+
+number = []
+
+for i in range(n+1):
+    number.insert(i,'P')
+
+number[0]='N'
+number[1]='N'
+
+factors_list = []
+new_list = []
+
+for i in range(2, n+1):
+    counter = 0
+    if i not in factors_list:
+         new_list.append(i)
+    for j in range(i*i, n+1, i):
+            factors_list.append(j)
+
+for i in new_list:
+    print('{:>6}'.format(i), end ="")
+    counter += 1
+
+    if counter % 10 ==0:
+        print('\n')
