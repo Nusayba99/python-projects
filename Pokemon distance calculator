@@ -1,0 +1,15 @@
+print(          "Pokemon Distance Calculator"        ) 
+print("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - ")
+
+first_name = ( input("Enter the name of the first pokemon: "))
+second_name = ( input("Enter the name of the second pokemon: "))
+first_x = float(input("Enter the x coordinate of the first pokemon: "))
+first_y = float(input("Enter the y coordinate of the first pokemon: "))
+second_x = float(input("Enter the x coordinate of the second pokemon: "))
+second_y = float(input("Enter the y coordinate of the second pokemon: "))
+
+distance = ((second_x - first_x)**2) + ((second_y - first_y)**2)
+
+distance = round(distance**0.5,2)
+
+print("The distance between", first_name, "and", second_name, "is", distance, "inches")
