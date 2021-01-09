@@ -1,0 +1,27 @@
+num_col = 0
+sentinel = 0
+while True:
+    num_col = int(input("Enter the number of columns: "))
+
+    if num_col < sentinel:
+        print("Enter a valind input")
+        continue
+
+    elif (num_col > sentinel):
+        print("Thanks! Here is your image: ")
+        print()
+        break
+
+first_counter = 0
+space = " "
+
+while (first_counter < num_col):
+    print(space*first_counter, "*")
+    first_counter += 1
+
+
+second_counter = num_col -2
+spaces = " "
+while (second_counter >= 0):
+    print(space*second_counter, "*")
+    second_counter -= 1
