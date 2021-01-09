@@ -1,0 +1,34 @@
+word = input("Enter a word to test: ")
+
+open_reviews_file = open("/Users/nusaybaiftekhar/Downloads", "r")
+
+read_all_reviews = open_reviews_file.read()
+read_all_reviews = read_all_reviews.lower()
+
+splitreviews = read_all_reviews.split("\n")
+
+num_word = 0
+score = 0
+
+for each_review in splitreviews:
+    splitline = each_review.split()
+    for i in range(1, len(splitline)):
+        if splitline[i] == word:
+            num_word += 1
+            score += int(splitline[0])
+print("'", word, "' appears ", num_word, " times", sep='')
+
+try:
+    average = (score / num_word)
+
+except:
+    print("There is no average score for reviews containing the word '", word, "'", sep='')
+    print("Cannot determine if this word is positive or negative")
+
+else:
+    print("The average score for reviews containing the word '", word, "' is ", average, sep='')
+
+    if average >= 2.0:
+        print("This is a positive word")
+    else:
+        print("This is a negative word")
